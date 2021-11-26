@@ -1,4 +1,3 @@
-# import Template_class
 import sys
 from reportPDF import Template_class
 import smtplib
@@ -24,10 +23,7 @@ def process(content):
 	report_path = pdf.report_path
 	pdf.draw()
 	pdf.render()
-	# s = smtplib.SMTP()
-	# Send email to recipient(s)
 	recipients = content['email']
-	# for recipient in recipients:
 	mail = MIMEMultipart()
 	mail['From'] = 'noreply@dfms.co.uk'
 	mail['Subject'] = 'DFMS - Report'
@@ -37,7 +33,6 @@ def process(content):
 	encoders.encode_base64(e)
 	e.add_header('content-disposition', 'attachment', filename=filename)
 	mail.attach(e)
-	# s = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 	s = smtplib.SMTP('email-smtp.eu-west-1.amazonaws.com')
 	s.connect('email-smtp.eu-west-1.amazonaws.com', 587)
 	s.starttls()
@@ -51,8 +46,3 @@ def process(content):
 	data = open(report_path+filename, 'rb')
 	s3.Bucket('dfms-pdf-reports').put_object(Key=filename, Body=data)
 	os.remove(report_path+filename)
-
-
-# print(str(datetime.datetime.timestamp(datetime.datetime.now())).replace('.', '_'))
-# content = json.load(open('content.json'))
-# process(content)
