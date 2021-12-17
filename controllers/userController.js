@@ -96,11 +96,7 @@ exports.resetPassword = async (req, response, next) => {
           Body: {
             Html: {
               Charset: "UTF-8",
-              Data: 'Hi ' + user.name + '.<br>' + '<br>' +
-                'Your password has been updated. Please use the following password to login to https://eval.dfms.co.uk .<br><br>' +
-                'Your new password: ' + password + '<br><br>' +
-                'If you have any queries, please do not hesitate to contact the DFMS Support team: support@dfms.co.uk .<br>' +
-                '<br>Thank you.'
+              Data: 'Hi ' + user.name + '.<br>' + '<br>'
             }
           },
           Subject: {
@@ -159,16 +155,7 @@ exports.signup = async (req, response, next) => {
           Body: {
             Html: {
               Charset: "UTF-8",
-              Data: 'Hi ' + metadata.name + '.<br>' + '<br>' +
-                'Thank you for your interest in the DFMS application. Please use the following details to login into the DFMS platform:<br>' +
-                '<ul style="margin:0; margin-left: 25px; padding:0; align="left" type="disc">' +
-                  '<li>https://eval.dfms.co.uk</li>' +
-                  '<li>Username: '+ email + '</li>' +
-                  '<li>Temporary password: ' + password + '</li>' +
-                '</ul>' +
-                'Please note you can change the temporary password from the setting menu.<br>' +
-                'If you have any queries, please do not hesitate to contact the DFMS Support team: support@dfms.co.uk <br>' +
-                '<br>Thank you.'
+              Data: 'Hi ' + metadata.name + '.<br>' + '<br>' 
             }
           },
           Subject: {
