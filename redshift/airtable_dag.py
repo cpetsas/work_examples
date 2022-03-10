@@ -10,7 +10,7 @@ from airflow.models import Variable
 import requests
 
 args = {
-    'owner': 'RHEA',
+    'owner': '',
 }
 
 dag = DAG(
