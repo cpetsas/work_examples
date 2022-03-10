@@ -15,5 +15,5 @@ install_requires=   ['boto3==1.16.56',
                     'python-dateutil==2.8.1',
                     's3transfer==0.3.4',
                     'six==1.15.0',
-                    'urllib3==1.26.2'],
+                    'urllib3==1.26.5'],
 python_requires='>=3',)
